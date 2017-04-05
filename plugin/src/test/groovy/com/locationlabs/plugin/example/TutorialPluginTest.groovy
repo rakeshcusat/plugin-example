@@ -8,8 +8,6 @@ import spock.lang.Specification
 class TutorialPluginTest extends Specification {
 
 
-	GradleRunner runner
-	
 	def "add task to the project"() {
 		when:
 		Project project = ProjectBuilder.builder().build()
