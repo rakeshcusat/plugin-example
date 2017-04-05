@@ -1,0 +1,24 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+apply plugin: 'project-report'
+dependencies {
+    compile gradleApi()
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+
+    // Dependencies for unit test cases.
+   // See https://docs.gradle.org/current/userguide/test_kit.html and
+   // http://www.petrikainulainen.net/programming/testing/writing-unit-tests-with-spock-framework-creating-a-gradle-project/
+   // for background.
+   testCompile 'junit:junit:4.12'
+   testCompile('org.spockframework:spock-core:1.0-groovy-2.4') {
+      exclude module: 'groovy-all'
+   }
+}
+
+repositories {
+	mavenLocal()
+    mavenCentral()
+}
+
+group='com.locationlabs'   //Group name makes easier to manager the packages.
+version='0.1-SNAPSHOT'
